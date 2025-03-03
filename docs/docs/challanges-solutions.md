@@ -3,13 +3,8 @@ title: Challanges Faced and Solutions
 sidebar_position: 5
 ---
 
-# State Management
+# Challenges & Solutions
 
-I chose to use React Query as it simplified data fetching (by not having to use useStates and useEffects)while also caching and updating data.
+1. One of the challanges was that I had to dig a little through the CoinCap API to find out what the correct returned JSON format is, as it wasn't really clear from the start. After finding this out it was a straight shot to creating the correct typescript type that the request would be expecting. Alternatively, I could have used Postman to examine the API in a more detailed approach.
 
-I used React Query as such:
-
-- Fetching and caching API data
-- Automatic refetching every 60 seconds
-- Retry mechanism for failed requests
-- Minimizing rerendering of the price list, as most of the time prices were already cached
+2. Another challange I've encountered was while setting up the Query Client boiler plate from `react-query`. Initially, I tried doing everything inside `layout.tsx`, however I quickly realized that it's much better to separate functionality and create a separte `Provider.tsx` component which handles exactly that.
